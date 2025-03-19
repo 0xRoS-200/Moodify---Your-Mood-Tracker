@@ -9,40 +9,40 @@
 </head>
 
 <body class="h-screen bg-slate-900">
-    <div class="h-full  flex flex-col">
+    <div class="h-full flex flex-col">
         <div
-            class="h-[85%] rounded-b-[35px] bg-gradient-to-br from-indigo-900 to-pink-600 flex flex-col items-center justify-between py-4 px-1 gap-2 lg:h-[90%] lg:px-5">
+            class="h-[85%] rounded-b-[35px] bg-gradient-to-br from-indigo-900 to-pink-600 flex flex-col items-center justify-between py-4 px-1 gap-2 lg:h-[90%] lg:px-5" id="m-pg">
             <div
-                class="text-[1.5rem] text-center text-white font-bold mt-1 p-4 sm:text-[2rem] lg:text-[2.5rem] sm:mt-6">
+                class="text-[1.5rem] text-center text-white font-bold mt-1 pb-4 pt-1 sm:text-[2rem] lg:text-[2.5rem] sm:mt-6">
                 How Do You Feel Today
                 ?</div>
             <div class="flex justify-center items-center p-10 transparent-yellow-opacity-low rounded-full">
                 <div class="p-8 transparent-yellow-opacity-mid rounded-full md:p-10"><img src="./img/smile.png"
-                        alt="image" class="h-28 rounded-full md:h-32 lg:h-32"></div>
+                        alt="image" class="h-28 rounded-full md:h-32 lg:h-32" id="display_mood"></div>
             </div>
             <div
-                class="flex justify-around gap-1 w-full px-6 py-1 text-white rounded-full transparent-grey-opacity-mid">
+                class="flex justify-around gap-1 w-full px-6 py-1 text-white rounded-full transparent-grey-opacity-mid" id="mood_buttons">
                 <div
                     class="flex flex-col justify-center items-center cursor-pointer font-bold gap-1 hover:scale-110 hover:text-blue-500">
                     <div class="p-2 rounded-full active:bg-gradient-to-br from-green-400 to-cyan-300"><img
-                            src="img/angry.png" alt="angry" class="h-12 md:h-14"></div>Angry
+                            src="img/angry.png" alt="angry" class="h-12 md:h-14" id="angry"></div>Angry
                 </div>
                 <div
                     class="flex flex-col justify-center items-center cursor-pointer font-bold  gap-1 hover:scale-110 hover:text-blue-500">
                     <div class="p-2 rounded-full active:bg-gradient-to-br from-green-400 to-cyan-300"><img
-                            src="img/sad.png" alt="sad" class="h-12 md:h-14"></div>
+                            src="img/sad.png" alt="sad" class="h-12 md:h-14" id="sad"></div>
                     Sad
                 </div>
                 <div
                     class="flex flex-col justify-center items-center cursor-pointer font-bold  gap-1 hover:scale-110 hover:text-blue-500">
                     <div class="p-2 rounded-full active:bg-gradient-to-br from-green-400 to-cyan-300"> <img
-                            src="img/neutral.png" alt="neutral" class="h-12 md:h-14"></div>
+                            src="img/neutral.png" alt="neutral" class="h-12 md:h-14" id="neutral"></div>
                     Neutral
                 </div>
                 <div
                     class="flex flex-col justify-center items-center cursor-pointer font-bold gap-1 hover:scale-110 hover:text-blue-500">
                     <div class="p-2 rounded-full active:bg-gradient-to-br from-green-400 to-cyan-300"><img
-                            src="img/smile.png" alt="happy" class="h-12 md:h-14"></div>
+                            src="img/smile.png" alt="happy" class="h-12 md:h-14" id="happy"></div>
                     Happy
                 </div>
             </div>
@@ -50,11 +50,17 @@
                     class="bg-purple-500 px-[8rem] py-2 rounded-xl text-lg text-white font-bold hover:bg-purple-600 active:bg-purple-700 focus:ring-2 focus:ring-slate-50 lg:px-[12rem] lg:py-[1rem]">Note
                     Mood</button></div>
         </div>
+        <div class="hidden h-screen" id="c-pg">
+            <div class="bg-gradient-to-br from-lime-300 via-fuchsia-500 to-pink-50 h-[90%] py-20 flex justify-center items-center p-4">
+                <div class="h-[80%] w-full transparent rounded-xl "></div>
+            </div>
+        </div>
         <div class="flex justify-center gap-24 mt-2">
-            <div class="active:bg-slate-50 rounded-xl p-1"><img src="img/calendar.png" alt="calender" class="w-14"></div>
-            <div class="active:bg-slate-50 rounded-xl p-1"><img src="img/dial.png" alt="mood" class="w-14"></div>
+            <div class="rounded-xl p-1" id="calendar_page"><img src="img/calendar.png" alt="calender" class="w-14"></div>
+            <div class="bg-slate-50 rounded-xl p-1" id="mood_page"><img src="img/dial.png" alt="mood" class="w-14"></div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
