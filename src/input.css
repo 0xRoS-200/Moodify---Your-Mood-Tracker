@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.transparent-yellow-opacity-low{
+    background-color: rgba(255, 251, 0, 0.151);
+}
+.transparent-yellow-opacity-mid{
+    background-color: rgba(255, 251, 0, 0.212);
+}
