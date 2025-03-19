@@ -11,20 +11,25 @@
 <body class="h-screen bg-slate-900">
     <div class="h-full">
         <div
-            class="h-[85%] rounded-b-[35px] bg-gradient-to-br from-indigo-900 to-pink-600 flex flex-col items-center p-1 gap-4">
-            <div class="text-[2.5rem] text-center text-white font-bold mt-8 p-4">How Do You Feel Today ?</div>
+            class="h-[85%] rounded-b-[35px] bg-gradient-to-br from-indigo-900 to-pink-600 flex flex-col items-center justify-between py-10 gap-2 lg:h-[90%] lg:px-5">
+            <div class="text-[1.8rem] text-center text-white font-bold mt-1 p-4 sm:text-[2.5rem] lg:text-[3rem] sm:mt-6">How Do You Feel Today
+                ?</div>
             <div class="flex justify-center items-center p-10 transparent-yellow-opacity-low rounded-full">
-                <div class="p-10 transparent-yellow-opacity-mid rounded-full"><img src="./img/smile.png" alt="image"
-                        class="h-36 rounded-full"></div>
+                <div class="p-8 transparent-yellow-opacity-mid rounded-full md:p-10"><img src="./img/smile.png" alt="image"
+                        class="h-28 rounded-full md:h-32 lg:h-44"></div>
             </div>
-            <div class="flex justify-around gap-2 w-full">
-                <div class="flex flex-col justify-center items-center"><img src="img/angry.png" alt="angry" class="h-12">Angry</div>
-                <div class="flex flex-col justify-center items-center"><img src="img/sad.png" alt="sad" class="h-12">Sad</div>
-                <div class="flex flex-col justify-center items-center"><img src="img/neutral.png" alt="neutral" class="h-12">Neutral</div>
-                <div class="flex flex-col justify-center items-center"><img src="img/smile.png" alt="happy" class="h-12">Happy</div>
+            <div class="flex justify-around gap-1 w-full px-6 py-2 text-white rounded-full transparent-grey-opacity-mid">
+                <div class="flex flex-col justify-center items-center cursor-pointer font-bold  gap-1"><img src="img/angry.png" alt="angry"
+                        class="h-12">Angry</div>
+                <div class="flex flex-col justify-center items-center cursor-pointer font-bold  gap-1"><img src="img/sad.png" alt="sad" class="h-12">Sad
+                </div>
+                <div class="flex flex-col justify-center items-center cursor-pointer font-bold  gap-1"><img src="img/neutral.png" alt="neutral"
+                        class="h-12">Neutral</div>
+                <div class="flex flex-col justify-center items-center cursor-pointer font-bold gap-1"><img src="img/smile.png" alt="happy"
+                        class="h-12">Happy</div>
             </div>
             <div><button
-                    class="bg-purple-500 px-[9rem] py-3 rounded-xl text-lg text-white font-bold hover:bg-purple-600 active:bg-purple-700 focus:ring-2 focus:ring-slate-50">Note
+                    class="bg-purple-500 px-[8rem] py-2 rounded-xl text-lg text-white font-bold hover:bg-purple-600 active:bg-purple-700 focus:ring-2 focus:ring-slate-50">Note
                     Mood</button></div>
         </div>
     </div>
