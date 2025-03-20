@@ -14,10 +14,10 @@ const nextMonthBtn = document.getElementById("nextMonth");
 const popupContainer = document.createElement("div");
 
 const mood_array = {
-    happy: "😊",
-    neutral: "😐",
-    sad: "😢",
-    angry: "😡"
+    happy: "./img/smile.png",
+    neutral: "./img/neutral.png",
+    sad: "./img/sad.png",
+    angry: "./img/angry.png"
 };
 
 let moodData = JSON.parse(localStorage.getItem("moodData")) || {}; // Load stored moods
@@ -25,7 +25,7 @@ let currentDate = new Date();
 
 // Function to change the mood
 function change_mood(mood) {
-    mood_display.textContent = mood_array[mood];
+    mood_display.src = mood_array[mood];
 }
 
 // Function to change pages between mood and calendar
@@ -106,7 +106,7 @@ function showPopup(dateKey) {
 
     popupContainer.innerHTML = `
         <p class="text-lg font-bold">Your Mood on this Day</p>
-        <span class="text-3xl">${moodData[dateKey]}</span>
+        <img src="${moodData[dateKey]}" alt="Mood Image" class="w-16 h-16 mt-2">
     `;
 
     document.body.appendChild(popupContainer);
@@ -115,6 +115,54 @@ function showPopup(dateKey) {
     setTimeout(() => {
         popupContainer.remove();
     }, 3000);
+}
+
+
+
+
+// Function to save the selected mood for the current date
+function saveMood(mood) {
+    if (!mood) return; // Prevent saving if no mood is selected
+
+    const today = new Date();
+    const dateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+    moodData[dateKey] = mood_array[mood];
+
+    // Save to local storage
+    localStorage.setItem("moodData", JSON.stringify(moodData));
+
+    // Update the displayed mood
+    mood_display.textContent = mood_array[mood];
+
+    // Show success popup at the top
+    showSuccessPopup("Mood is noted");
+
+    // Re-render the calendar
+    renderCalendar(currentDate);
+}
+
+// show popup
+function showSuccessPopup(message) {
+    const popup = document.createElement("div");
+    popup.textContent = message;
+    popup.classList.add(
+        "fixed", "top-5", "left-1/2", "transform", "-translate-x-1/2",
+        "bg-green-500", "text-white", "py-2", "px-4", "rounded-md", "shadow-md",
+        "transition", "opacity-0", "duration-300"
+    );
+
+    document.body.appendChild(popup);
+
+    // Fade in effect
+    setTimeout(() => {
+        popup.classList.remove("opacity-0");
+    }, 50);
+
+    // Remove after 2 seconds
+    setTimeout(() => {
+        popup.classList.add("opacity-0");
+        setTimeout(() => popup.remove(), 300);
+    }, 2000);
 }
 
 // Event listeners for mood buttons
@@ -134,16 +182,6 @@ angry_mood.addEventListener('click', () => {
     change_mood('angry');
     saveMood('angry');
 });
-
-// Function to save the selected mood for the current date
-function saveMood(mood) {
-    const today = new Date();
-    const dateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-    moodData[dateKey] = mood_array[mood];
-
-    localStorage.setItem("moodData", JSON.stringify(moodData)); // Save to local storage
-    renderCalendar(currentDate); // Update the calendar
-}
 
 // Event listeners for page changes
 mood_dial.addEventListener('click', () => change_pages('mood_page'));
