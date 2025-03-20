@@ -39,9 +39,9 @@ Moodify---Your-Mood-Tracker/
    ```sh
    npm install -D tailwindcss@3
    ```
-5. **Run the project locally:**
+4. **Run the project locally:**
    ```sh
-   npm start
+   npm run tailwind:css
    ```
 
 ## 🚀 Deployment
