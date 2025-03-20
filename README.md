@@ -45,7 +45,7 @@ Moodify---Your-Mood-Tracker/
    ```
 
 ## 🚀 Deployment
-The project is deployed on Vercel. You can access it [here](https://moodify-your-mood-tracker.vercel.app).
+The project is deployed on Vercel. You can access it [here](https://moodify-your-mood-tracker-vb8l.vercel.app/).
 
 ## 🌟 Contributing
 Contributions are welcome! Feel free to fork the repository, create a new branch, and submit a pull request.
